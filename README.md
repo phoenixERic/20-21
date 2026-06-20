@@ -1,16 +1,17 @@
 COMPATABLE WITH PYTHON 3.11 
 
-KG-RAG
 ├── PDF
-├── src
-     | __Chunker
-     |__injest
-     |__pdf_extractor
-     |___query
-     |__rag_engine
-     |__vector_store
+│                 ← put your PDF files here
+├── chroma_db/              ← auto-created; your local vector database lives here
+├── src/
+│   ├── pdf_extractor.py   ← Step 1: extract text + tables from PDFs
+│   ├── chunker.py         ← Step 2: table-aware chunking
+│   ├── vector_store.py    ← Step 3: local embeddings + ChromaDB
+│   ├── ingest.py          ← Run this to process your PDFs (Steps 1-3)
+│   ├── rag_engine.py      ← Step 4: retrieval + Gemini answer generation
+│   └── query.py           ← Step 5: interactive CLI to ask questions
 ├── requirements.txt
-├── .env
+├── .env           ← copy to .env and add your Gemini API key
 └── README.md
 
 
