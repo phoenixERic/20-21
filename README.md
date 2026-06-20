@@ -1,3 +1,5 @@
+COMPATABLE WITH PYTHON 3.11 
+
 KG-RAG
 ├── PDF
 ├── src
